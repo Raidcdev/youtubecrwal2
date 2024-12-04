@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  dev:
+    build: .
+    volumes:
+      - .:/app
+      - ./config:/app/config
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app/src
+    env_file:
+      - .env
+    tty: true
+    stdin_open: true
+    command: python src/crwal.py
+    restart: always
