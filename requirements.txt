@@ -1,7 +1,17 @@
+# 기존 패키지들
 numpy
 pandas
 requests
 python-dotenv
 pytest
 black
-flake8 
+flake8
+
+# YouTube 크롤링 관련
+yt-dlp
+google-auth
+google-api-python-client
+youtube-transcript-api
+youtube-comment-downloader
+tqdm  # 진행률 표시
+colorama  # 터미널 컬러 출력

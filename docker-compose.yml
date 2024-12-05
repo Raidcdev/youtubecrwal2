@@ -1,18 +1,15 @@
-version: '3.8'
-
 services:
   dev:
     build: .
     volumes:
       - .:/app
-      - ./config:/app/config
-    ports:
-      - "8000:8000"
+      - ./json_key:/app/json_key
     environment:
       - PYTHONPATH=/app/src
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/json_key/service_account.json
     env_file:
       - .env
     tty: true
     stdin_open: true
-    command: python src/crwal.py
+    command: tail -f /dev/null
     restart: always
